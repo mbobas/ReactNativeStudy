@@ -6,18 +6,27 @@ const COLOR_INCREMENT = 15;
 
 //konwencja mówi, że reduce powinien być poza componentem, ze względu na state
 const reducer = (state, action) => {
-// state here is === { red: number, green: number, blue: number};
-//action her is === {colorToChange: 'red' || 'green' || 'blue', amount: 15 || -15};
+// state. here is === { red: number, green: number, blue: number};
+//action. her is === {colorToChange: 'red' || 'green' || 'blue', amount: 15 || -15};
 
     switch(action.colorToChange) {
+        //never going to do:    state.red = state.red -15 (example);
         case 'red': 
-        //never going to do:     state.red = state.red -15 (example);
-            return { ...state, red: state.red + action.amount };
+            return state.red + action.amount > 255 || state.red + action.amount < 0 
+                ? state
+                : { ...state, red: state.red + action.amount };
+
         case 'green':
-            return { ...state, green: state.green + action.amount };
+            return state.green + action.amount > 255 || state.green + action.amount < 0 
+                ? state
+                : { ...state, green: state.green + action.amount };
+
         case 'blue':
-            return { ...state, blue: state.blue + action.amount };
+           return state.blue + action.amount > 255 || state.blue + action.amount < 0 
+                ? state
+                : { ...state, blue: state.blue + action.amount };
         default:
+            return state;
     }
 
 

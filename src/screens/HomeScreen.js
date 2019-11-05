@@ -3,7 +3,11 @@ import { Text, StyleSheet, View, ScrollView, Button, TouchableOpacity } from 're
 
 const HomeScreen = ({navigation}) => {
   return (
-    <ScrollView>
+      <ScrollView
+      contentContainerStyle={{
+        flexGrow: 1,
+        justifyContent: 'space-between'
+    }}>
       <Text style={styles.text}>Witam w Demo Michała Gulczyńskiego</Text>
       <Button 
             color="#f194ff"
@@ -56,6 +60,31 @@ const HomeScreen = ({navigation}) => {
             title="Go to BoxScreen"
             onPress={() => navigation.navigate('BoxScreen')}
             />  
+      <Button
+            color="#f194ff"
+            title="Go to BoxScreen"
+            onPress={() => navigation.navigate('BoxScreen')}
+            />
+      <Button
+            color="#f194ff"
+            title="Go to BoxScreen"
+            onPress={() => navigation.navigate('BoxScreen')}
+            />  
+      <Button
+            color="#f194ff"
+            title="Go to BoxScreen"
+            onPress={() => navigation.navigate('BoxScreen')}
+            />  
+      <Button
+            color="#f194ff"
+            title="Go to BoxScreen"
+            onPress={() => navigation.navigate('BoxScreen')}
+            />  
+      <Button
+            color="#f194ff"
+            title="Go to BoxScreen"
+            onPress={() => navigation.navigate('BoxScreen')}
+            />    
 
       </ScrollView>
   );
